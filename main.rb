@@ -1,25 +1,24 @@
 class Board
   attr_accessor :board
+
   def initialize
-    @board = {'topl' => ' ', 'topm' => ' ', 'topr' => ' ',
-              'midl' => ' ', 'midm' => ' ', 'midr' => ' ',
-              'botl' => ' ', 'botm' => ' ', 'botr' => ' '}
+    @board = { 'topl' => ' ', 'topm' => ' ', 'topr' => ' ',
+               'midl' => ' ', 'midm' => ' ', 'midr' => ' ',
+               'botl' => ' ', 'botm' => ' ', 'botr' => ' ' }
   end
 
   def display_board
     puts "\n"
     puts "#{board['topl']} | #{board['topm']} | #{board['topr']}"
-    puts "-" * ("#{board['midl']} | #{board['midm']} | #{board['midr']}".length + 1)
+    puts '-' * ("#{board['midl']} | #{board['midm']} | #{board['midr']}".length + 1)
     puts "#{board['midl']} | #{board['midm']} | #{board['midr']}"
-    puts "-" * ("#{board['midl']} | #{board['midm']} | #{board['midr']}".length + 1)
+    puts '-' * ("#{board['midl']} | #{board['midm']} | #{board['midr']}".length + 1)
     puts "#{board['botl']} | #{board['botm']} | #{board['botr']}"
   end
 
   def fullboard?
     full_flag = false
-    if board.values.all? { |val| val != ' '}
-      full_flag = true
-    end
+    full_flag = true if board.values.all? { |val| val != ' ' }
     full_flag
   end
 
@@ -38,14 +37,12 @@ class Board
     win = nil
     # Checks to see i\f any winning combination from the last play results in a win
     win_combinations.each do |comb|
-      if comb.all? { |val| val == marker}
-        win = true
-      end
+      win = true if comb.all? { |val| val == marker }
     end
     # If there is a win, it will be stated and the game exits
     if win
       puts "#{name} wins the game!!"
-      abort("Come again!")
+      abort('Come again!')
     else
       puts "Let's keep it going..."
     end
@@ -61,6 +58,7 @@ end
 
 class Player
   attr_reader :name, :marker
+
   def initialize(name, marker)
     @name = name
     @marker = marker
@@ -85,7 +83,7 @@ player2 = Player.new(name2, marker2)
 
 players = [player1, player2]
 counter = 0
-until board.fullboard? do
+until board.fullboard?
   turn = counter % 2
   puts "#{players[turn].name} make your play: "
   choice = gets.chomp
@@ -96,6 +94,4 @@ until board.fullboard? do
     redo
   end
 end
-abort("Board Full: Tie")
-
-
+abort('Board Full: Tie')
