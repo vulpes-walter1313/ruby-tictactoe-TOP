@@ -45,7 +45,7 @@ end
 This method must let us know if the board is full. Ideally one would test an array of all the `@board` hash values and see if all are not equal to `' '`. The `fullboard?` method should be checked prior to a `board_play` to ensure it never cuases a problem of overriding values.
 
 ### check\_for\_win
-This method should check the basic patterns of a TicTacToe win. Such as a straight horizontal, vertical or diagnal win. If these patterns are filled by the same marker of the player that passes in their marker as an argument, then the player wins. This method should be called after a `boardplay` utilizing `boardplay(player.name, player.marker)`.
+This method should check the basic patterns of a TicTacToe win. Such as a straight horizontal, vertical or diagnal win. If these patterns are filled by the same marker of the player that passes in their marker as an argument, then the player wins. This method should be called after a `board_play` utilizing `board_play(player, choice)`.
 
 # Player
 This object will represent the actual human players.
