@@ -1,6 +1,46 @@
 # Ruby-TicTacToe-TOP
 Tic Tac Toe challenge in Ruby from The Odin Project
 
+# How to Play
+
+Playing is as simple as downloading main.rb and running:
+
+```Bash
+ruby main.rb
+```
+
+It will being by getting player 1's info then player 2's info. After that player 1 will be asked to make a move. For your moves you have to choose one of the following options:
+
+```text
+topl, topm, topr
+midl, midm, midr
+botl, botm, botr
+```
+
+**Example**
+
+```text
+player1 make your play: 
+topl
+
+X |   |  
+----------
+  |   |  
+----------
+  |   |  
+player2 make your play: 
+midr
+
+X |   |  
+----------
+  |   | O
+----------
+  |   |  
+  
+```
+
+As you can see you can choose top, middle, or bottom, then left, middle, and right. You win by getting 3 in a row vertically, horizontally, or diagonally. Otherwise a Tie will occur if the board is full. Also once a marker has been placed, the another marker can not be placed on that slot.
+
 # Board Object
 This object will have a variable data structure that represents the 9-cell
 board of tic tack toe.
