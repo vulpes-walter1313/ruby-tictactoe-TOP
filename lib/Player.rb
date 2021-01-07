@@ -5,4 +5,7 @@ class Player
     @name = name
     @marker = marker
   end
+  def to_hash
+    { name: self.name, marker: self.marker}
+  end
 end
